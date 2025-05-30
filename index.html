@@ -11,6 +11,24 @@
 
   gtag('config', 'AW-10862325925');
 </script>
+
+    <!-- Event snippet for 5.30 gouwu conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-10862325925/gJCICP_vg9AaEKXhx7so',
+      'transaction_id': '',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -34,6 +52,7 @@
     
     <script>
         function openwe() {
+           gtag_report_conversion();
             window.open('https://sourl.cn/yF8UQe', '_blank');
         }
     </script>
